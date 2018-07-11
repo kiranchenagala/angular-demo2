@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { EmployeeModule } from './employee-module/employee.module';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -19,6 +20,10 @@ import { AuthService } from './services/auth.service';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { LoggerInterceptorService } from './services/logger-interceptor.service';
 import { APP_ROUTES } from './app.routes';
+import { LoginGaurdService } from './services/login-gaurd.service';
+import { ProductComponent } from './product/product.component';
+import { OverviewComponent } from './product/overview/overview.component';
+import { SpecificationComponent } from './product/specification/specification.component';
 
 
 @NgModule({
@@ -30,7 +35,10 @@ import { APP_ROUTES } from './app.routes';
     CountryCodePipe,
     FilterPipe,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductComponent,
+    OverviewComponent,
+    SpecificationComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +46,10 @@ import { APP_ROUTES } from './app.routes';
     ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    EmployeeModule
   ],
-  providers: [ DataService, AuthService ,{
+  providers: [ DataService, AuthService , LoginGaurdService,{
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptorService,
     multi : true
