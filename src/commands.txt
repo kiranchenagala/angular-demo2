@@ -1,0 +1,24 @@
+node -v
+npm -v
+npm install -g typescript
+tsc -v
+npm install -g @angular/cli@1.7
+ng -v
+
+//create a new project
+ng new aj-quickstart
+//to kickstart live dev apps
+go to project path
+ng serve
+
+ng serve [--port 9080]
+https://github.com/synergy2411/sg3-demo
+
+declarations --> 
+ng g d <DIRECTIVE_NAME>
+ng g c <COMPONENT_NAME>
+ng g s <SERVICE_NAME>
+ng g m <MODULE_NAME>
+
+ng generate directive directives/unless --spec false ==> to avoid the spec test file
+ng g p pipes/filter --spec false

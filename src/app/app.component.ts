@@ -27,10 +27,8 @@ export class AppComponent {
     //     err=>console.log(err),
     //     ()=>console.log("COMPLETED"));
     firebase.initializeApp({
-      // apiKey: "AIzaSyDCsoL5_5lzp5vPh_SyjwWLSddscWOJVT0",
-      // authDomain: "fir-soc-gen.firebaseapp.com"
-      apiKey: "AIzaSyDkPdhcPJ6o282NgHwqp3-cCAdffAwQq98",
-      authDomain: "angular-demo-e2429.firebaseapp.com",
+      apiKey: "AIzaSyDCsoL5_5lzp5vPh_SyjwWLSddscWOJVT0",
+      authDomain: "fir-soc-gen.firebaseapp.com"
     });
     
     this.dataService.getApiData()
